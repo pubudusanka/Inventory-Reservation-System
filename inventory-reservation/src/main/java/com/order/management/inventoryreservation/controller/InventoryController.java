@@ -19,6 +19,7 @@ public class InventoryController {
 
     private final InventoryService inventoryService;
 
+    // save product
     @PostMapping("/products")
     public ResponseEntity<StandardResponseDto> createProduct(@RequestBody ProductDto data){
         inventoryService.saveProduct(data);
@@ -30,6 +31,7 @@ public class InventoryController {
         );
     }
 
+    // generate order
     @PostMapping("/reserve")
     public ResponseEntity<StandardResponseDto> reserveProduct(@RequestBody OrderDto data){
         inventoryService.reserveProduct(data);
